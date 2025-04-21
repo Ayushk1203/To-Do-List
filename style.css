@@ -17,11 +17,12 @@ body{
     justify-content:center;
     background-color: var(--background);
     color: var(--text);
-    margin-top:10vh;
+    
 }
 
 .container{
-    
+    margin-top:50px;
+    min-height:50vh
 }
 
 .head{
@@ -42,13 +43,20 @@ body{
 
 .heading p{
     font-size: 2rem;
-    
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom:30px;
 }
 .progressbar-container{
     height:10px;
     width:270px;
-    border:2px solid black;
+    
+    border-radius:10px;
+    background-color:var(--secondaryBackground)
+}
+
+.progressbar{
+    height:10px;
+    width:50%;
     border-radius:10px;
     background-color:var(--teal)
 }
@@ -68,12 +76,33 @@ body{
     font-size:2rem;
 }
 
-.input{
+.inputdiv{
     margin-top:30px;
+    width:100%;
 }
-.input form{
+.inputdiv form{
     display:flex;
     align-items:center;
     justify-content:space-evenly;
+    
+}
 
+#input{
+    width:80%;
+    background-color:var(--secondaryBackground);
+    outline:none;
+    color:var(--text);
+    padding:16px;
+    border:1px solid var(--purple);
+    border-radius:10px;
+}
+.add{
+    width:10%;
+    padding:8px;
+    background-color:var(--purple);
+    color:var(--text);
+    border:1px solid var(--purple);
+    border-radius:50%;
+    font-size:30px;
+    margin-left:20px;
 }
