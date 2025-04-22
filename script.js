@@ -7,6 +7,12 @@ const toggleTaskComplete = (index) =>{
 
 }
 
+const deleteTask = (index)=>{
+    tasks.splice(index,1);
+    updateTasksList();
+
+}
+
 const updateTasksList = ()=>{
     const taskList = document.getElementById('taskList');
 
@@ -22,8 +28,8 @@ const updateTasksList = ()=>{
                <p class="task${task.completed ? "completed" : ""}">${task.text}</p>
            </div>
            <div class="icons">
-              <img src='./images/edit.png' onclick=/>
-              <img src='./images/bin.png'/>
+              <img src='./images/edit.png' onclick="editTask(${index})"/>
+              <img src='./images/bin.png'onclick="deleteTask(${index})"/>
            </div>
         </div>
         
@@ -45,6 +51,7 @@ const addTaskToList = () =>{
         tasks.push({text:task, completed:false});
         updateTasksList();
     }
+    input.value = "";
 
 }
 
