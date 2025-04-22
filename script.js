@@ -13,6 +13,14 @@ const deleteTask = (index)=>{
 
 }
 
+const editTask = (index)=>{
+    const input = document.getElementById("input");
+    input.value = tasks[index].text;
+    
+    tasks.splice(index,1);
+    updateTasksList();
+}
+
 const updateTasksList = ()=>{
     const taskList = document.getElementById('taskList');
 
