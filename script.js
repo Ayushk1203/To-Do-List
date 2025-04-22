@@ -4,12 +4,34 @@ const tasks = [];
 const toggleTaskComplete = (index) =>{
     tasks[index].completed = !tasks[index].completed;
     updateTasksList();
+    updateStats();
+    
+    
 
+}
+
+const updateStats = () =>{
+    const completedLength = tasks.filter((task) => task.completed).length;
+    const totalLength = tasks.length;
+
+    const progress = totalLength === 0 ? 0 : (completedLength / totalLength) * 100;
+
+    const progressBar = document.getElementById("pb");
+    progressBar.style.width = `${progress}%`;
+
+    const stats = document.getElementById("num");
+
+    stats.innerHTML = `${completedLength} / ${totalLength}`;
+
+    
 }
 
 const deleteTask = (index)=>{
     tasks.splice(index,1);
     updateTasksList();
+    updateStats();
+    
+    
 
 }
 
@@ -19,7 +41,12 @@ const editTask = (index)=>{
     
     tasks.splice(index,1);
     updateTasksList();
+    updateStats();
+   
+    
 }
+
+
 
 const updateTasksList = ()=>{
     const taskList = document.getElementById('taskList');
@@ -58,6 +85,10 @@ const addTaskToList = () =>{
     if(task){
         tasks.push({text:task, completed:false});
         updateTasksList();
+        updateStats();
+        updateStats();
+        
+        
     }
     input.value = "";
 
