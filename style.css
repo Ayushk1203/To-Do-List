@@ -58,7 +58,8 @@ body{
     height:10px;
     width:0%;
     border-radius:10px;
-    background-color:var(--teal)
+    background-color:var(--teal);
+    transition: width 0.5s ease-in-out;
 }
 
 .tasks-completed{
